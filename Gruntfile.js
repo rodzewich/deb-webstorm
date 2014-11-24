@@ -3,7 +3,6 @@
 
 module.exports = function(grunt) {
 
-    /*grunt.loadNpmTasks("grunt-clean");*/
     grunt.loadNpmTasks("grunt-ejs");
     grunt.loadNpmTasks("grunt-chmod");
     grunt.loadNpmTasks("grunt-copy");
@@ -42,7 +41,7 @@ module.exports = function(grunt) {
                 src: [
                     "temp/DEBIAN/postinst",
                     "temp/DEBIAN/preinst",
-                    "temp/DEBIAN/portrm",
+                    "temp/DEBIAN/postrm",
                     "temp/DEBIAN/prerm",
                     "temp/*.sh",
                     "temp/**/*.sh"
@@ -68,6 +67,14 @@ module.exports = function(grunt) {
                     }
                 ]
             }
+        }
+    });
+
+    grunt.registerTask("check", "sdfsf", function () {
+        if (true) {
+            grunt.task.run("checkout");
+        } else {
+            grunt.task.run("build");
         }
     });
 
