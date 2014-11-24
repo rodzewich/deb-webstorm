@@ -8,8 +8,8 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks("grunt-copy");
 
     grunt.initConfig({
-        pkg : grunt.file.readJSON("package.json"),
-        ejs : {
+        pkg: grunt.file.readJSON("package.json"),
+        ejs: {
             package: {
                 options: grunt.file.readJSON("package.json"),
                 files: [
@@ -33,7 +33,7 @@ module.exports = function(grunt) {
                 ]
             }
         },
-        chmod : {
+        chmod: {
             package: {
                 options: {
                     mode: "755"
@@ -48,7 +48,7 @@ module.exports = function(grunt) {
                 ]
             }
         },
-        copy : {
+        copy: {
             package: {
                 files: [
                     {
