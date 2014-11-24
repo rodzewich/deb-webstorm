@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=8.0.4
+Type=Application
+Name=Webstorm
+GenericName=Javascript IDE
+Exec=/usr/share/webstorm/init/webstorm.sh
+Icon=/usr/share/webstorm/bin/webide.png
+Terminal=false
+Categories=IDE;Javascript;Development;
+StartupNotify=true
