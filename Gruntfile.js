@@ -8,16 +8,19 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks("grunt-copy");
 
     grunt.initConfig({
-        pkg: grunt.file.readJSON("webstorm.json"),
+        pkg: grunt.file.readJSON("package.json"),
         ejs: {
             webstorm: {
-                options: grunt.file.readJSON("package.json"),
+                options: {
+                    name: "webstorm",
+                    version: "9.0"
+                },
                 files: [
                     {
                         expand : true,
                         cwd: "webstorm",
                         src    : "DEBIAN/*",
-                        dest   : "temp",
+                        dest: "temp/webstorm",
                         ext    : ""
                     },
                     {
@@ -27,7 +30,7 @@ module.exports = function(grunt) {
                             "*.desktop",
                             "**/*.desktop"
                         ],
-                        dest   : "temp",
+                        dest: "temp/webstorm",
                         ext    : ".desktop"
                     }
                 ]
@@ -39,12 +42,12 @@ module.exports = function(grunt) {
                     mode: "755"
                 },
                 src: [
-                    "temp/DEBIAN/postinst",
-                    "temp/DEBIAN/preinst",
-                    "temp/DEBIAN/postrm",
-                    "temp/DEBIAN/prerm",
-                    "temp/*.sh",
-                    "temp/**/*.sh"
+                    "temp/webstorm/DEBIAN/postinst",
+                    "temp/webstorm/DEBIAN/preinst",
+                    "temp/webstorm/DEBIAN/postrm",
+                    "temp/webstorm/DEBIAN/prerm",
+                    "temp/webstorm/*.sh",
+                    "temp/webstorm/**/*.sh"
                 ]
             }
         },
@@ -79,6 +82,6 @@ module.exports = function(grunt) {
     });
 
     grunt.registerTask("default", "description", ["ejs:webstorm", "copy:webstorm", "chmod:webstorm"]);
-    // fakeroot dpkg-deb --build temp
+    // fakeroot dpkg-deb --build temp --output package_1.0-2.deb
 
 };

@@ -1,9 +1,9 @@
 [Desktop Entry]
-Version=version
+Version=9.0
 Type=Application
 Name=Webstorm
-GenericName=Javascript IDE
-Exec=/usr/share/webstorm/init/webstorm.sh
+GenericName=JavaScript IDE
+Exec=/usr/share/webstorm/bin/webstorm.sh
 Icon=/usr/share/webstorm/bin/webide.png
 Terminal=false
 Categories=IDE;Javascript;Development;

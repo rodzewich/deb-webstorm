@@ -1,0 +1,12 @@
+Package: webstorm
+Version: 9.0
+Provides: webstorm
+Maintainer: Oleg Rodzewich <rodzewich.oleg@gmail.com>
+Architecture: all
+Section: misc
+Description: The smartest JavaScript IDE
+ WebStorm is a lightweight yet powerful IDE, perfectly equipped for complex
+ client-side development and server-side development with Node.js.
+Depends: java
+Installed-Size: 3
+Priority: optional
