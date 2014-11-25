@@ -1,0 +1,6 @@
+#!/bin/bash
+
+if [ ! -d "${HOME}/.WebStorm9" ]; then
+    cd $HOME;
+    /usr/bin/env tar -xvjf /usr/share/webstorm/webstorm9.tar.bz2;
+fi

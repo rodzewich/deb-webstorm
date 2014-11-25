@@ -8,21 +8,21 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks("grunt-copy");
 
     grunt.initConfig({
-        pkg: grunt.file.readJSON("package.json"),
+        pkg: grunt.file.readJSON("webstorm.json"),
         ejs: {
-            package: {
+            webstorm: {
                 options: grunt.file.readJSON("package.json"),
                 files: [
                     {
                         expand : true,
-                        cwd    : "package",
+                        cwd: "webstorm",
                         src    : "DEBIAN/*",
                         dest   : "temp",
                         ext    : ""
                     },
                     {
                         expand : true,
-                        cwd    : "package",
+                        cwd: "webstorm",
                         src    : [
                             "*.desktop",
                             "**/*.desktop"
@@ -34,7 +34,7 @@ module.exports = function(grunt) {
             }
         },
         chmod: {
-            package: {
+            webstorm: {
                 options: {
                     mode: "755"
                 },
@@ -49,11 +49,11 @@ module.exports = function(grunt) {
             }
         },
         copy: {
-            package: {
+            webstorm: {
                 files: [
                     {
                         expand : true,
-                        cwd    : "package",
+                        cwd: "webstorm",
                         src    : [
                             "*",
                             "**/*",
@@ -70,7 +70,7 @@ module.exports = function(grunt) {
         }
     });
 
-    grunt.registerTask("check", "sdfsf", function () {
+    grunt.registerTask("webstorm", "Build webstorm package.", function () {
         if (true) {
             grunt.task.run("checkout");
         } else {
@@ -78,7 +78,7 @@ module.exports = function(grunt) {
         }
     });
 
-    grunt.registerTask("default", "description", ["ejs:package", "copy:package", "chmod:package"]);
+    grunt.registerTask("default", "description", ["ejs:webstorm", "copy:webstorm", "chmod:webstorm"]);
     // fakeroot dpkg-deb --build temp
 
 };

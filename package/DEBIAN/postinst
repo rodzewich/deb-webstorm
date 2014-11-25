@@ -2,7 +2,7 @@
 set -e; # fail on any error
 set -u; # treat unset variables as errors
 
-# ======[ Trap Errors ]======#
+# ======[ Trap Errors ]====== #
 set -E; # let shell functions inherit ERR trap
 
 # Trap non-normal exit signals:
@@ -13,7 +13,5 @@ function err_handler {
     logger -s -p "syslog.err" -t "ootync.deb" "supersh.deb script '$0' error code $EXIT_STATUS (line $BASH_LINENO: '$BASH_COMMAND')";
     exit $EXIT_STATUS;
 }
-
-echo "... Ваш код установочного скрипта ..."
 
 exit 0
